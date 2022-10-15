@@ -8,7 +8,7 @@
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
   <script src="https://cdnjs.cloudflare.com/ajax/libs/qrious/4.0.2/qrious.min.js"></script>
 <link rel="stylesheet" href="style.css">  
-<title>Document</title>
+<title>Short URL by Anuwat</title>
 </head>
 <body>
   
@@ -33,20 +33,20 @@
   <table class="table table-striped">
     <thead>
       <tr>
-        <!-- <th scope="col">#</th>
-        <th scope="col">First</th>
-        <th scope="col">Last</th>
-        <th scope="col"></th> -->
+        <th scope="col">Short Link</th>
+        <th scope="col">Default Link</th>
+        <th scope="col">Uses</th>
+        <th scope="col"></th>
       </tr>
     </thead>
     <tbody>
       {{ mounted() }}
       <tr v-for="items in info">
-        <th scope="row"> <a target="_blank" :href=" 'http://localhost:3000/r/'+items.short_URL"> http://localhost:3000/r/{{ items.short_URL }} </a> </th>
+        <th scope="row"> <a target="_blank" :href=" 'http://localhost:3000/r/'+items.short_URL"> {{ items.short_URL }} </a> </th>
         <td>{{ items.redirect }}</td>
         <td> {{ items.clicked }}  </td>
-        <td>   <button type="button" class="btn btn-primary qr" data-bs-toggle="modal" data-bs-target="#exampleModal"  @click="test(items.short_URL)">Qrcode</button> </td>
-        <td>   <button @click="deleteData(items.id)" type="button" class="btn btn-primary">delete</button> </td>
+        <td>   <button type="button" class="btn btn-primary qr" data-bs-toggle="modal" data-bs-target="#exampleModal"  @click="test(items.redirect)">Qrcode</button> </td>
+        <td>   <button @click="deleteData(items.id)" type="button" class="btn btn-danger">delete</button> </td>
       </tr>
     </tbody>
   </table>

@@ -39,7 +39,7 @@ new Vue({
       },
 
       test(redirect) {
-        this.text = "http://localhost:3000/r/"+redirect
+        this.text = redirect
         console.log(this.text)
       }
       
