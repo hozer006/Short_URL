@@ -2,7 +2,7 @@
 
 # sutup go-app
 
-### Create Database
+### Create Database on postgresql
 ```
 $ psql -d database -U user -W
 $ CREATE DATABASE shorturl;
