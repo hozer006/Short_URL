@@ -6,8 +6,8 @@
 ```
 $ psql -d database -U user -W
 $ CREATE DATABASE shorturl;
-$\l
-$\q
+$ \l
+$ \q
 ```
 
 ### Run Go-app on http:\\\localhost:3000\
