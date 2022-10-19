@@ -1,6 +1,3 @@
-
-
-
 new Vue({
   el: "#app",
   data() {
@@ -31,28 +28,23 @@ new Vue({
       );
     },
 
-      async deleteData(id) {
-        let x = window.confirm("You want to delete the user?");
-        if (x) {
-          const user = await axios.delete('http://localhost:3000/short/'+id);
-        }
-      },
-
-      test(redirect) {
-        this.text = redirect
-        console.log(this.text)
+    async deleteData(id) {
+      let x = window.confirm("You want to delete the user?");
+      if (x) {
+        const user = await axios.delete("http://localhost:3000/short/" + id);
       }
-      
     },
 
-    computed: {
-      newQRCode() {
-        this.qrcode.value = this.text;
-        return this.qrcode.toDataURL();
-      },
+    test(redirect) {
+      this.text = redirect;
+      console.log(this.text);
     },
-  
-  
+  },
 
-    
+  computed: {
+    newQRCode() {
+      this.qrcode.value = this.text;
+      return this.qrcode.toDataURL();
+    },
+  },
 });

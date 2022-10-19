@@ -27,12 +27,12 @@ func CreateShort(short ShortURL) error {
 	return tx.Error
 }
 
-func UpdateShort(short ShortURL) error{
+func UpdateShort(short ShortURL) error {
 	tx := db.Save(&short)
 	return tx.Error
 }
 
-func DeleteShort(id uint64) error{
+func DeleteShort(id uint64) error {
 	tx := db.Unscoped().Delete(&ShortURL{}, id)
 	return tx.Error
 }
